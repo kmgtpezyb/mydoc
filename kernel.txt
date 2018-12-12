@@ -1,0 +1,8 @@
+1、如何解压CentOS 7中的initramfs
+1.1、拷贝initramfs文件
+cp /boot/initramfs-3.10.0-514.26.2.el7.x86_64.img /opt/
+1.2、开始解压
+cd /opt
+mkdir initramfs
+cd initramfs
+/usr/lib/dracut/skipcpio ../initramfs-3.10.0-514.26.2.el7.x86_64.img | zcat | cpio -ivd
